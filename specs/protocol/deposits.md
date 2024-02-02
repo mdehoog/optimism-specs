@@ -353,8 +353,8 @@ Blocks after the Fjord activation block contain all pre-Fjord values 1:1,
 and also set the following new attributes:
 
 - The `l1CostIntercept` is set to `0`.
-- The `l1CostFastlzCoef` is set to `1e6`.
-- The `l1CostTxSizeCoef` is set to `0`.
+- The `l1CostFastlzCoef` is set to `0`.
+- The `l1CostTxSizeCoef` is set to `1e6`.
 
 ## Special Accounts on L2
 
