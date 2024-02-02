@@ -1345,6 +1345,42 @@ cast keccak $(cast concat-hex 0x000000000000000000000000000000000000000000000000
 [EIP-4788]: https://eips.ethereum.org/EIPS/eip-4788
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
 
+#### Fjord
+
+The Fjord hardfork activation block, contains the following transactions in this order:
+
+- L1 Attributes Transaction, using the pre-Fjord `setL1BlockValuesEcotone`
+- User deposits from L1
+- Network Upgrade Transactions
+  - L1Block deployment
+  - GasPriceOracle deployment
+  - Update L1Block Proxy ERC-1967 Implementation Slot
+  - Update GasPriceOracle Proxy ERC-1967 Implementation Slot
+  - GasPriceOracle Enable Fjord
+
+To not modify or interrupt the system behavior around gas computation, this block will not include any sequenced
+transactions by setting `noTxPool: true`.
+
+##### L1Block Deployment - Fjord
+
+TODO
+
+##### GasPriceOracle Deployment - Fjord
+
+TODO
+
+##### L1Block Proxy Update - Fjord
+
+TODO
+
+##### GasPriceOracle Proxy Update - Fjord
+
+TODO
+
+##### GasPriceOracle Enable Fjord
+
+TODO
+
 ## Building Individual Payload Attributes
 
 [payload attributes]: #building-individual-payload-attributes
