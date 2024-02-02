@@ -167,29 +167,25 @@ l1CostSigned = (intercept + fastlzCoef*fastlzSize + txSizeCoef*txSize) * l1FeeSc
 l1Cost = uint256(max(0, l1CostSigned))
 ```
 
-Where:
+| Input arg         | Type      | Description                                                       |
+|-------------------|-----------|-------------------------------------------------------------------|
+| `l1BaseFee`       | `uint256` | L1 base fee of the latest L1 origin registered in the L2 chain    |
+| `l1BlobBaseFee`   | `uint256` | Blob gas price of the latest L1 origin registered in the L2 chain |
+| `fastlzSize`      | `uint256` | Length of the FastLZ-compressed RLP-encoded signed tx             |
+| `txSize`          | `uint256` | Length of uncompressed RLP-encoded signed tx                      |
+| `l1BaseFeeScalar` | `uint32`  | L1 base fee scalar, scaled by `1e6`                               |
+| `l1BlobFeeScalar` | `uint32`  | L1 blob fee scalar, scaled by `1e6`                               |
+| `intercept`       | `int32`   | Intercept constant, scaled by `1e6` (can be negative)             |
+| `fastlzCoef`      | `int32`   | FastLZ coefficient, scaled by `1e6` (can be negative)             |
+| `txSizeCoef`      | `int32`   | Transaction size coefficient, scaled by `1e6` (can be negative)   |
 
-- the final `l1Cost` computation is an unlimited precision unsigned integer computation, with the result in Wei and
-  having `uint256` range.
+Where:
 
 - the `l1CostSigned` calculation is an unlimited precision signed integer computation, with the result in Wei and
   having `int256` range.
 
-- `l1BaseFee` is the L1 base fee of the latest L1 origin registered in the L2 chain.
-
-- `l1BlobBaseFee` is the blob gas price, computed as described in [EIP-4844][4844-gas] from the
-  header of the latest registered L1 origin block.
-
-- `l1BaseFeeScalar` is the L1 base fee scalar, scaled by `1e6` (see below for suggested values).
-
-- `l1BlobFeeScalar` is the L1 blob fee scalar, scaled by `1e6` (see below for suggested values).
-
-- `fastlzSize` is the length of the FastLZ-compressed RLP-encoded signed tx.
-
-- `txSize` is the length of uncompressed RLP-encoded signed tx.
-
-- `intercept`, `fastlzCoef`, and `txSizeCoef` are constants calculated by linear regression (see next section),
-  scaled by `1e6`. These values can be negative.
+- the final `l1Cost` computation is an unlimited precision unsigned integer computation, with the result in Wei and
+  having `uint256` range.
 
 ##### L1-Cost linear regression details
 
