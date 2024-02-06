@@ -343,8 +343,7 @@ underlying type. The overall calldata layout is as follows:
 | l1CostFastlzCoef  | int32   | 168-171        |         |
 | l1CostTxSizeCoef  | int32   | 172-175        |         |
 
-Total calldata length MUST be exactly 176 bytes. This helps to slow database growth as every
-L2 block includes a L1 Attributes deposit transaction.
+Total calldata length MUST be exactly 176 bytes.
 
 In the first L2 block after the Fjord activation block, the Fjord L1 attributes are first used.
 
