@@ -453,7 +453,7 @@ The function called by the L1 attributes transaction depends on the network upgr
 #### Fjord L1Block upgrade
 
 The L1 Attributes Predeployed contract, `L1Block.sol`, is upgraded as part of the Fjord upgrade.
-The version is incremented to `1.3.0`, one new storage slot is introduced:
+The version is incremented to `1.3.0`, and one existing slot begins to store additional data:
 
 - `l1CostIntercept` (`int32`): system configurable to set the L1 cost formula intercept
 - `l1CostFastlzCoef` (`int32`): system configurable to set the L1 cost formula FastLZ coefficient
