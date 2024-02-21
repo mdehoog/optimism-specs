@@ -1363,9 +1363,9 @@ transactions by setting `noTxPool: true`.
 
 ##### L1Block Deployment - Fjord
 
-The `L1Block` contract is upgraded to process the new Fjord Fast LZ parameters.
+The `L1Block` contract is upgraded to store the new Fjord Fast LZ parameters.
 
-A deposit transaction is derived with the following attributes:
+To perform this upgrade, a deposit transaction is derived with the following attributes:
 
 - `from`: `0x4210000000000000000000000000000000000002`
 - `to`: `null`
@@ -1404,9 +1404,9 @@ This transaction MUST deploy a contract with the following code hash
 ##### GasPriceOracle Deployment - Fjord
 
 The `GasPriceOracle` contract is upgraded to support the new Fjord L1 data fee computation. Post fork this contract
-will use the Fast LZ parameters to compute the gas price for L1 data fee transactions.
+will use FastLZ to compute the L1 data fee.
 
-A deposit transaction is derived with the following attributes:
+To perform this upgrade, a deposit transaction is derived with the following attributes:
 
 - `from`: `0x4210000000000000000000000000000000000003`
 - `to`: `null`,
