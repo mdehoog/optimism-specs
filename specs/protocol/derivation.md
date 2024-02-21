@@ -1321,7 +1321,7 @@ A deposit transaction is derived with the following attributes:
 - `to`: `null`
 - `mint`: `0`
 - `value`: `0`
-- `gasLimit`: `TODO`
+- `gasLimit`: `420,000`
 - `data`: `0x60806040523...` ([full bytecode](../static/bytecode/fjord-l1-block-deployment.txt))
 - `sourceHash`: `0x402f75bf100f605f36c2e2b8d5544a483159e26f467a9a555c87c125e7ab09f3`,
   computed with the "Upgrade-deposited" type, with `intent = "Fjord: L1 Block Deployment"
@@ -1349,7 +1349,7 @@ jq -r ".bytecode.object" packages/contracts-bedrock/forge-artifacts/L1Block.sol/
 ```
 
 This transaction MUST deploy a contract with the following code hash
-`TODO`.
+`0x12e89c50902af815d85608f9a2a35579a74e9491077b94211c96f79ef265bf9c`.
 
 ##### GasPriceOracle Deployment - Fjord
 
@@ -1362,7 +1362,7 @@ A deposit transaction is derived with the following attributes:
 - `to`: `null`,
 - `mint`: `0`
 - `value`: `0`
-- `gasLimit`: `TODO`
+- `gasLimit`: `1,450,000`
 - `data`: `0x60806040523...` ([full bytecode](../static/bytecode/fjord-gas-price-oracle-deployment.txt))
 - `sourceHash`: `0x86122c533fdcb89b16d8713174625e44578a89751d96c098ec19ab40a51a8ea3`
   computed with the "Upgrade-deposited" type, with `intent = "Fjord: Gas Price Oracle Deployment"
@@ -1391,7 +1391,7 @@ jq -r ".bytecode.object" packages/contracts-bedrock/forge-artifacts/GasPriceOrac
 ```
 
 This transaction MUST deploy a contract with the following code hash
-`TODO`.
+`0xcb82de8a527fee307214950192bf0ff5b2701c6b6eda2fbd025cf6d4075fbe38`.
 
 ##### L1Block Proxy Update - Fjord
 
