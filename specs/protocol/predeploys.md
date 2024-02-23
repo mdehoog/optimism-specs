@@ -254,18 +254,6 @@ These new scalar values are managed by the `SystemConfig` contract on the L1 by 
 backwards compatible [versioned encoding scheme][ecotone-scalars] of its `scalars` storage
 slot. The `decimals` remains hardcoded to 6, and the `overhead` value is ignored.
 
-Following the Fjord upgrade, the values used for L1 fee computation are:
-
-- baseFeeScalar
-- blobBaseFeeScalar
-- costIntercept
-- costFastlzCoef
-- costTxSizeCoef
-- decimals
-
-These values are managed by the `SystemConfig` contract on the L1. The`decimals` remains hardcoded
-to 6.
-
 ## L1Block
 
 [Implementation](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L2/L1Block.sol)
