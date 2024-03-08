@@ -40,6 +40,12 @@ l1Cost = uint256(max(0, l1CostSigned))
 
 Where:
 
+- the `intercept` is hard-coded as `-27_321_890`
+
+- the `fastlzCoef` is hard-coded as `1_031_462`
+
+- the `txCoef` is hard-coded as `-88_664`
+
 - the `l1CostSigned` calculation is an unlimited precision signed integer computation, with the result in Wei and
   having `int256` range.
 
