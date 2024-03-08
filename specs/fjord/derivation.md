@@ -7,9 +7,7 @@
 - [Deriving the Transaction List](#deriving-the-transaction-list)
   - [Network upgrade automation transactions](#network-upgrade-automation-transactions)
     - [Fjord](#fjord)
-      - [L1Block Deployment - Fjord](#l1block-deployment---fjord)
       - [GasPriceOracle Deployment - Fjord](#gaspriceoracle-deployment---fjord)
-      - [L1Block Proxy Update - Fjord](#l1block-proxy-update---fjord)
       - [GasPriceOracle Proxy Update - Fjord](#gaspriceoracle-proxy-update---fjord)
       - [GasPriceOracle Enable Fjord](#gaspriceoracle-enable-fjord)
 
