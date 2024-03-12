@@ -38,40 +38,40 @@ will use FastLZ to compute the L1 data fee.
 
 To perform this upgrade, a deposit transaction is derived with the following attributes:
 
-- `from`: `0x4210000000000000000000000000000000000003`
+- `from`: `0x4210000000000000000000000000000000000002`
 - `to`: `null`,
 - `mint`: `0`
 - `value`: `0`
 - `gasLimit`: `1,450,000`
-- `data`: `0xTODO...` ([full bytecode](../static/bytecode/fjord-gas-price-oracle-deployment.txt))
-- `sourceHash`: `0xTODO`
+- `data`: `0x60806040523...` ([full bytecode](../static/bytecode/fjord-gas-price-oracle-deployment.txt))
+- `sourceHash`: `0x86122c533fdcb89b16d8713174625e44578a89751d96c098ec19ab40a51a8ea3`
   computed with the "Upgrade-deposited" type, with `intent = "Fjord: Gas Price Oracle Deployment"
 
-This results in the Fjord GasPriceOracle contract being deployed to `0xTODO`,
+This results in the Fjord GasPriceOracle contract being deployed to `0xa919894851548179A0750865e7974DA599C0Fac7`,
 to verify:
 
 ```bash
-cast compute-address --nonce=0 0x4210000000000000000000000000000000000003
-Computed Address: 0xTODO
+cast compute-address --nonce=0 0x4210000000000000000000000000000000000002
+Computed Address: 0xa919894851548179A0750865e7974DA599C0Fac7
 ```
 
 Verify `sourceHash`:
 
 ```bash
 ❯ cast keccak $(cast concat-hex 0x0000000000000000000000000000000000000000000000000000000000000002 $(cast keccak "Fjord: Gas Price Oracle Deployment"))
-# 0xTODO
+# 0x86122c533fdcb89b16d8713174625e44578a89751d96c098ec19ab40a51a8ea3
 ```
 
 Verify `data`:
 
 ```bash
-git checkout TODO (update once merged)
+git checkout fbdba16ce5fe0207ceeb8487d762807888aa43f5 (update once merged)
 pnpm clean && pnpm install && pnpm build
 jq -r ".bytecode.object" packages/contracts-bedrock/forge-artifacts/GasPriceOracle.sol/GasPriceOracle.json
 ```
 
 This transaction MUST deploy a contract with the following code hash
-`0xTODO`.
+`0xc8635a80727bf5945c4f6e1fb1730c4b812347472cc760b098b341ca454af625`.
 
 ##### GasPriceOracle Proxy Update - Fjord
 
@@ -85,22 +85,22 @@ A deposit transaction is derived with the following attributes:
 - `mint`: `0`
 - `value`: `0`
 - `gasLimit`: `50,000`
-- `data`: `0xTODO`
-- `sourceHash`: `0xTODO`
+- `data`: `0x3659cfe6000000000000000000000000a919894851548179a0750865e7974da599c0fac7`
+- `sourceHash`: `0x1e6bb0c28bfab3dc9b36ffb0f721f00d6937f33577606325692db0965a7d58c6`
   computed with the "Upgrade-deposited" type, with `intent = "Fjord: Gas Price Oracle Proxy Update"`
 
 Verify data:
 
 ```bash
-cast concat-hex $(cast sig "upgradeTo(address)") $(cast abi-encode "upgradeTo(address)" 0xTODO)
-# 0xTODO
+cast concat-hex $(cast sig "upgradeTo(address)") $(cast abi-encode "upgradeTo(address)" 0xa919894851548179A0750865e7974DA599C0Fac7)
+# 0x3659cfe6000000000000000000000000a919894851548179a0750865e7974da599c0fac7
 ```
 
 Verify `sourceHash`:
 
 ```bash
 cast keccak $(cast concat-hex 0x0000000000000000000000000000000000000000000000000000000000000002 $(cast keccak "Fjord: Gas Price Oracle Proxy Update"))
-# 0xTODO
+# 0x1e6bb0c28bfab3dc9b36ffb0f721f00d6937f33577606325692db0965a7d58c6
 ```
 
 ##### GasPriceOracle Enable Fjord
