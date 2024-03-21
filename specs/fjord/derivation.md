@@ -51,7 +51,7 @@ This results in the Fjord GasPriceOracle contract being deployed to `0xa91989485
 to verify:
 
 ```bash
-cast compute-address --nonce=0 0x4210000000000000000000000000000000000002
+❯ cast compute-address --nonce=0 0x4210000000000000000000000000000000000002
 Computed Address: 0xa919894851548179A0750865e7974DA599C0Fac7
 ```
 
@@ -66,7 +66,7 @@ Verify `data`:
 
 ```bash
 git checkout fbdba16ce5fe0207ceeb8487d762807888aa43f5 (update once merged)
-pnpm clean && pnpm install && pnpm build
+pnpm clean && pnpm install && pnpm build && make op-bindings
 jq -r ".bytecode.object" packages/contracts-bedrock/forge-artifacts/GasPriceOracle.sol/GasPriceOracle.json
 ```
 
